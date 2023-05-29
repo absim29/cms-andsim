@@ -117,8 +117,9 @@
     .carousel {
         margin-top: 280px;
     }
-    .item {
-        max-height: 300px;
+    #img {
+        height: 300px;
+        width: auto;
     }
 }
 
@@ -214,7 +215,8 @@
     .imghome {
         max-height: 360px;
     }
-    .item {
-        max-height: 220px;
+    #img {
+        height: 220px;
+        width: auto;
     }
 }
