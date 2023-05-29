@@ -1,0 +1,220 @@
+/* Media queries */
+@media screen and (min-width: 901px) and (max-width: 1130px) {
+    nav ul li {
+        line-height: 150px;
+    }
+    .container {
+        margin: 20px;
+    }
+    .contain-item .cta {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 751px) and (max-width: 900px) {
+    .header {
+        min-height: 45%;
+    }
+    nav ul li {
+        line-height: 130px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    .container {
+        margin: 0px 20px 10px;
+    }
+    .contain-item .cta {
+        margin-right: 5px;
+        margin-left: auto;
+    }
+    .h1-home {
+        margin-top: 50px;
+        font-size: 40px;
+    }
+    .p-home {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 750px) {
+    header {
+        position: fixed;
+        overflow: hidden;
+        width: var(--full-size);
+        top: 0;
+        z-index: 1;
+    }
+    .header {
+        min-height: 50%;
+    }
+    label #btn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: var(--full-size);
+        height: 100vh;
+        left: -100%;
+        background: var(--dark-grey);
+        top: 70px;
+        text-align: center;
+        transition: all .5s;
+        z-index: 1;
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    #check:checked ~ label #btn {
+        display: none;
+    }
+    #check:checked ~ label #cancel {
+        display: block;
+    }
+    .movie-container {
+        margin: 100px auto 20px auto;
+    }
+    .container, .cart-container, .contain-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 100px 10px 40px 10px;
+        align-self: center;
+    }
+    .line {
+        width: var(--full-size);
+    }
+    .img {
+        padding: 15px;
+    }
+    .cta {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .h1-home {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+    .p-home {
+        font-size: 15px;
+    }
+    #ctaproduct {
+        margin: auto;
+    }
+    h1 {
+        margin-top: 20px;
+    }
+    .carousel {
+        margin-top: 280px;
+    }
+    .item {
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    header {
+        position: fixed;
+        overflow: hidden;
+        width: var(--full-size);
+        top: 0;
+        z-index: 1;
+    }
+    .header {
+        min-height: 20%;
+        background-color: var(--dark-grey);
+    }
+    label #btn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: var(--full-size);
+        height: 100vh;
+        left: -100%;
+        background: var(--dark-grey);
+        top: 55px;
+        text-align: center;
+        transition: all .5s;
+        z-index: 1;
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    #check:checked ~ label #btn {
+        display: none;
+    }
+    #check:checked ~ label #cancel {
+        display: block;
+    }
+    .movie-container {
+        margin: 70px auto 20px auto;
+    }
+    .container, .cart-container, .contain-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-top: 60px;
+    }
+    .containproduct, .about-text{
+        margin: 10px;
+    }
+    .line {
+        width: var(--full-size);
+    }
+    .img {
+        padding: 15px;
+    }
+    .cta {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .h1-home {
+        margin-top: 10%;
+        font-size: 40px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .p-home, 
+    .about-text, 
+    .cart-text,
+    .prod-text {
+        font-size: 20px;
+    }
+    #ctaproduct {
+        margin: auto;
+    }
+    h1 {
+        margin-top: 20px;
+    }
+    .carousel {
+        margin-top: 300px;
+    }
+    .imghome {
+        max-height: 360px;
+    }
+    .item {
+        max-height: 220px;
+    }
+}
