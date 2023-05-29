@@ -178,6 +178,7 @@
     }
     .contain-item {
         padding: 0;
+        gap: 0;
     }
     .containproduct, .about-text{
         margin: 10px;
