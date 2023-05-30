@@ -188,7 +188,7 @@ p {
     position: relative;
     white-space: nowrap;
     overflow: scroll;
-    margin: 10px;
+    margin: 20px;
 }
 
 
@@ -275,6 +275,10 @@ a {
 
 .imghome {
     max-height: 360px;
+}
+
+.imghome:hover {
+    transform: scale(1.2);
 }
 
 .cartimg {

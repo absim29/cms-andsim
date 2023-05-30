@@ -7,7 +7,7 @@ async function carousel() {
     carouselImg.innerHTML = '';
     images.forEach(function(element, index) {
         carouselImg.innerHTML += 
-            `<img src="${element.image}" alt="Image of movie" class="imghome">`;
+            `<a href="../product.html?id=${element.id}"><img src="${element.image}" alt="Image of movie" class="imghome"></a>`;
     })
         
     };
