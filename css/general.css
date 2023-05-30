@@ -299,7 +299,8 @@ a {
 
 .aboutimage {
     max-width: var(--full-size);
-    margin-top: auto;
+    z-index: -1;
+    margin-top: -200px;
 }
 
 /** Movie hover **/
@@ -431,4 +432,13 @@ a {
     font-size: 40px;
     font-family: var(--font);
     margin-right: 60px;
+}
+
+.social-media {
+    font-size: 90px;
+    margin-top: 20px;
+}
+
+.map {
+    height: 300px;
 }

@@ -9,7 +9,7 @@ async function createHtml() {
     product.innerHTML +=
         `<section class="container">
             <div class="containproduct">
-                <h1>${movie.title}</h1>
+                <h1 class="product-title">${movie.title}</h1>
                 <p class="prod-text">${movie.description}</p>     
                 <p>Release date: ${movie.released}</p>
                 <p>Rated: ${movie.rating}</p>

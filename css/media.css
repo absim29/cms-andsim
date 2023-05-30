@@ -86,7 +86,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin-top: 100px;
+        margin-top: 50px;
         align-self: center;
     }
     .line {
@@ -111,7 +111,10 @@
         margin: auto;
     }
     h1 {
-        margin-top: 20px;
+        margin-top: 50px;
+    }
+    .product-title {
+        margin-top: 100px;
     }
     .carousel {
         margin-top: 280px;
@@ -119,6 +122,9 @@
     #img {
         height: 300px;
         width: auto;
+    }
+    .containproduct {
+        margin: -65px 20px;
     }
 }
 
@@ -173,7 +179,6 @@
         flex-direction: column;
         align-items: center;
         gap: 5px;
-        margin-top: 60px;
     }
     .contain-item {
         padding: 0;
@@ -197,11 +202,14 @@
         margin-right: auto;
     }
     .h1-home {
-        margin-top: 10%;
+        margin-top: 30%;
         font-size: 40px;
     }
     h1 {
         font-size: 40px;
+    }
+    .product-title {
+        margin-top: 70px;
     }
     .p-home, 
     .about-text, 
@@ -212,9 +220,6 @@
     #ctaproduct {
         margin: auto;
     }
-    h1 {
-        margin-top: 20px;
-    }
     .carousel {
         margin-top: 300px;
     }
@@ -224,5 +229,15 @@
     #img {
         height: 220px;
         width: auto;
+    }
+    .cartimg {
+        max-height: 100px;
+    }
+    .cart-item-title, .cart-price, .cart-item {
+        font-size: 20px;
+    }
+    .cart-total-price, .cart-total-title {
+        font-size: 35px;
+        margin-right: 20px;
     }
 }
