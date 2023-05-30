@@ -260,6 +260,9 @@ a {
     margin-right: auto;
     margin-left: auto;
 }
+.contact-cta {
+    margin-left: 50px;
+}
 
 
 /** Image styling **/
@@ -316,18 +319,23 @@ a {
     max-width: 1000px;
     margin: 0px auto 40px auto;
     align-items: center;
+    gap: 50px;
 }
 
 .container > * {
     flex: 1;
 }
 
-.contain-item {
+.contain-item, .contain-item-cart {
     display: flex;
     flex-direction: column;
     max-width: 80vw;
     margin: auto;
     gap: 10px;
+}
+
+.contain-item {
+    align-items: center;
 }
 
 .containproduct {
@@ -336,8 +344,7 @@ a {
     align-items: flex-start;
     gap: 40px;
 }
-.contain-item .cta {
-    margin-right: 5px;
+.contain-item-cart .cta {
     margin-left: auto;
 }
 
