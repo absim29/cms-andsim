@@ -19,7 +19,7 @@ async function createHtml() {
             </div>
             <div class="contain-item">
                 <img src="${movie.image}" alt="Cover image of the movie" class="img">
-                <a href="cart.html" class="cta" id="ctaproduct">BUY NOW</a>
+                <a href="cart.html" class="cta shop-item-button" id="ctaproduct">BUY NOW</a>
             </div>
         </section>`;
 
