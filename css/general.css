@@ -442,3 +442,8 @@ a {
 .map {
     height: 300px;
 }
+
+#backtolist {
+    color: var(--white);
+    text-decoration: underline;
+}
