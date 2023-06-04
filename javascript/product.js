@@ -2,6 +2,18 @@ import {getMovie} from "./APIsingle.js";
 
 const product = document.querySelector(".container");
 
+function initStorage() {
+    const storage = JSON.parse(localStorage.getItem('CartInfo'));
+    !storage && localStorage.setItem("CartInfo", JSON.stringify([]));
+}
+
+initStorage();
+
+function countCart(store) {
+    return store.length;
+}
+ 
+
 async function createHtml() {
     const movie = await getMovie();
 
@@ -19,7 +31,7 @@ async function createHtml() {
             </div>
             <div class="contain-item">
                 <img src="${movie.image}" alt="Cover image of the movie" class="img">
-                <a href="cart.html" class="cta shop-item-button" id="ctaproduct">BUY NOW</a>
+                <button class="cta shop-item-button" id="ctaproduct">BUY NOW</button>
             </div>
         </section>`;
 
@@ -36,6 +48,16 @@ async function createHtml() {
         document.getElementById('sale').innerHTML = ``;
     }
 
+    const shopButton = document.querySelector('.shop-item-button')
+    shopButton.addEventListener('click', () => {
+        const cartInfo = JSON.parse(localStorage.getItem('CartInfo'));
+        cartInfo.push(product);
+        localStorage.setItem('CartInfo', JSON.stringify(cartInfo));
+    })
+
+    const counter = countCart(JSON.parse(localStorage.getItem('CartInfo')));
+    const cartCounter = document.querySelector('.fa-layers-counter');
+    cartCounter.innerText = counter;
 }
 
 createHtml();
