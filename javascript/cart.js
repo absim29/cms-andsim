@@ -35,7 +35,7 @@ function renderCart() {
         </div>
         <div class="cart-total">
             <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">$39.97</span>
+            <span class="cart-total-price"></span>
         </div>
         <a href="success.html" class="cta">CHECKOUT</a>`;
     
@@ -44,6 +44,20 @@ function renderCart() {
 renderCart();
 
 
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        total = price
+    }
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+}
+
+updateCartTotal();
 
 // if (document.readyState == 'loading') {
 //     document.addEventListener('DOMContentLoaded', ready)
@@ -76,18 +90,7 @@ renderCart();
 // }
 
 
-// function updateCartTotal() {
-//     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-//     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-//     var total = 0
-//     for (var i = 0; i < cartRows.length; i++) {
-//         var cartRow = cartRows[i]
-//         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-//         var price = parseFloat(priceElement.innerText.replace('$', ''))
-//         total = price
-//     }
-//     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
-// }
+
 
 
 // function ready() {
