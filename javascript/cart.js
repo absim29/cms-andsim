@@ -34,7 +34,7 @@ function renderCart() {
     const cartItems = document.querySelector(".contain-item-cart");
     
     cartItems.innerHTML = '';
-    cartItems.innerHTML = 
+    cartItems.innerHTML += 
     `<h1 class="product-title">Order Summary</h1>
         <div class="cart-row">
             <span class="cart-item cart-header cart-column">Movie</span>
