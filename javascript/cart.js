@@ -1,11 +1,28 @@
 import {getMovie} from "./APIsingle.js";
 
 
-
 const cart = JSON.parse(localStorage.getItem('CartInfo'));
 console.log({cart});
 
+// if (document.readyState == 'loading') {
+//     document.addEventListener('DOMContentLoaded', ready)
+// } else {
+//     ready()
+// }
 
+function ready() {
+    var removeCartItemBtn = document.getElementsByClassName('remove')
+    for (var i=0; i < removeCartItemBtn.length; i++) {
+        var button = removeCartItemBtn[i]
+        button.addEventListener('click', removeCartItem)
+    }
+    var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i]
+        button.addEventListener('click', addToCartClicked)
+    }
+}
+ready();
 
 
 function renderCart() {
@@ -38,6 +55,11 @@ function renderCart() {
             <span class="cart-total-price"></span>
         </div>
         <a href="success.html" class="cta">CHECKOUT</a>`;
+
+        var cartRow = document.createElement('div');
+        cartRow.classList.add('cart-row');
+        
+
     
 };
 
@@ -59,53 +81,32 @@ function updateCartTotal() {
 
 updateCartTotal();
 
-// if (document.readyState == 'loading') {
-//     document.addEventListener('DOMContentLoaded', ready)
-// } else {
-//     ready()
-// }
-
-// function addMovieToCart(image, title, price) {
-//     var cartRow = document.createElement('div')
-//     cartRow.classList.add('cart-row')
-//     var cartItems = document.getElementsByClassName('cart-items')[0]
-//     var cartRowContents = `
-//         <div class="cart-item cart-column">
-//         <img src="${JSON.stringify.cart.image}" alt="Cover image of the movie" class="cartimg"> 
-//         <span class="cart-item-title">${JSON.stringify.cart.title}</span>
-//         <button class="cta remove">X</button>
-//         </div>
-//         <span class="cart-price cart-column">${JSON.stringify.cart.price}</span>
-//     `
-//     cartRow.innerHTML = cartRowContents
-//     cartItems.append(cartRow)
-//     cartRow.getElementsByClassName('remove')[0].addEventListener('click', removeCartItem)
-// }
 
 
-// function removeCartItem(event) {
-//     var buttonClicked = event.target
-//     buttonClicked.parentElement.parentElement.remove()
-//     updateCartTotal()
-// }
+function addMovieToCart(image, title, price) {
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    var cartRowContents = `
+        <div class="cart-item cart-column">
+        <img src="${cart[1].image}" alt="Cover image of the movie" class="cartimg"> 
+        <span class="cart-item-title">${cart[1].title}</span>
+        <button class="cta remove">X</button>
+        </div>
+        <span class="cart-price cart-column">${cart[1].price}</span>
+    `
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    cartRow.getElementsByClassName('remove')[0].addEventListener('click', removeCartItem)
+}
+addMovieToCart();
 
 
-
-
-
-// function ready() {
-//     var removeCartItemBtn = document.getElementsByClassName('remove')
-//     for (var i=0; i < removeCartItemBtn.length; i++) {
-//         var button = removeCartItemBtn[i]
-//         button.addEventListener('click', removeCartItem)
-//     }
-//     var addToCartButtons = document.getElementsByClassName('shop-item-button')
-//     for (var i = 0; i < addToCartButtons.length; i++) {
-//         var button = addToCartButtons[i]
-//         button.addEventListener('click', addToCartClicked)
-//     }
-// }
-
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateCartTotal()
+}
 
 // function addToCartClicked(event) {
 //     var button = event.target
