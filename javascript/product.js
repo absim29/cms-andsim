@@ -51,7 +51,7 @@ async function createHtml() {
     const shopButton = document.querySelector('.shop-item-button')
     shopButton.addEventListener('click', () => {
         const cartInfo = JSON.parse(localStorage.getItem('CartInfo'));
-        cartInfo.push(product);
+        cartInfo.push(movie);
         localStorage.setItem('CartInfo', JSON.stringify(cartInfo));
     })
 
