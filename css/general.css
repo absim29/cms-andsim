@@ -451,3 +451,17 @@ a {
     color: var(--white);
     text-decoration: underline;
 }
+
+#featured {
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(238 230 204 / 30%);
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10%;
+}
+
+.featured {
+    color: var(--white);
+}

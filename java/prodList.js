@@ -22,7 +22,7 @@ getProducts();
 async function renderMovieList() {
     const movies = await getProducts();
     const movieList = document.querySelector(".movie-container");
-    console.log(movies);
+    // console.log(movies);
     
     movieList.innerHTML = '';
     movies.forEach(movie => {
@@ -33,20 +33,8 @@ async function renderMovieList() {
             </a>            
             </div>`;
 
-            // if (movies.featured === true){
-
-            //     document.getElementById('featured').innerHTML += `<a href="../product.html?id=${movie.id}">
-            //                                                     <img class="item" id="img" src="${movie.images[0].src}">
-            //                                                     </a> `;
-            // }
-        
-            // else {
-            //     document.getElementById('featured').innerHTML = ``;
-            // }
+  
     })
-    
-
-
 
 
 };
@@ -56,7 +44,6 @@ renderMovieList();
 
 export async function getFeatured() {
     const featuredUrl = "https://cors.noroff.dev/www.joyful-design.no/wp-json/wc/store/products?featured=true";
-
     try {
         const response = await fetch(featuredUrl);
         const featured = await response.json();
@@ -66,8 +53,31 @@ export async function getFeatured() {
         console.error({error:'An error has occurred in the fetch api'})
     }
 
-    console.log({featured});
 }
 
 getFeatured();
 
+// console.log(getFeatured());
+
+// const featured = await getFeatured();
+// console.log(featured); 
+
+async function featuredMovies() {
+    const featured = await getFeatured();
+    console.log(featured); 
+
+    const featuredList = document.querySelector("#featured");
+
+    featuredList.innerHTML = '<h1 class="featured">Featured Movies:</h1>';
+    featured.forEach(item => {
+    featuredList.innerHTML += `<div id="feat">
+                                
+                                <a href="../product.html?id=${item.id}">
+                                <img class="item" id="img" src="${item.images[0].src}">
+                                </a>  
+                                </div>`
+})
+
+}
+
+featuredMovies();
