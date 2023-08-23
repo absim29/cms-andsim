@@ -18,6 +18,7 @@ export async function getProducts() {
 
 getProducts();
 
+
 async function renderMovieList() {
     const movies = await getProducts();
     const movieList = document.querySelector(".movie-container");
@@ -28,14 +29,45 @@ async function renderMovieList() {
         movieList.innerHTML += 
             `<div>
             <a href="../product.html?id=${movie.id}">
-            <h1>${movie.name}</h1>
-            <img class="item" id="img" src="">
+            <img class="item" id="img" src="${movie.images[0].src}">
             </a>            
             </div>`;
+
+            // if (movies.featured === true){
+
+            //     document.getElementById('featured').innerHTML += `<a href="../product.html?id=${movie.id}">
+            //                                                     <img class="item" id="img" src="${movie.images[0].src}">
+            //                                                     </a> `;
+            // }
+        
+            // else {
+            //     document.getElementById('featured').innerHTML = ``;
+            // }
     })
     
+
+
+
+
 };
 
 renderMovieList();
 
+
+export async function getFeatured() {
+    const featuredUrl = "https://cors.noroff.dev/www.joyful-design.no/wp-json/wc/store/products?featured=true";
+
+    try {
+        const response = await fetch(featuredUrl);
+        const featured = await response.json();
+        return featured;
+    }
+    catch(error) {
+        console.error({error:'An error has occurred in the fetch api'})
+    }
+
+    console.log({featured});
+}
+
+getFeatured();
 

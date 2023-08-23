@@ -7,7 +7,6 @@ const params = new URLSearchParams(queryString);
 export const id = params.get("id");
 
 const apiUrl = `https://cors.noroff.dev/www.joyful-design.no/wp-json`;
-// const ProdUrl = apiUrl + `/wc/store/products?id=` + id;
 const ProdUrl = apiUrl + `/wc/store/products/` + id;
 
 
@@ -32,22 +31,33 @@ async function createHtml() {
     document.title = movie.name;
     console.log(movie);
 
-    product.innerHTML = '';
-    product.innerHTML +=
+    for (let i=0; i<movie.categories.length; i++) {
+        let genre = movie.categories[i];
+        
+        genre = genre.name;
+        console.log(genre);
+    
+
+        product.innerHTML = '';
+        product.innerHTML +=
         `<section class="container">
             <div class="containproduct">
                 <h1 class="product-title">${movie.name}</h1>
                 <p class="prod-text">${movie.short_description}</p>     
                 <p>Release date: ${movie.description}</p>
-                <p>Genre: ${movie.categories.id}</p>
+                <p>Genre: ${genre}</p>
                 <h2 id="price"></h2>
                 <h3 id="sale"></h3>
             </div>
             <div class="contain-item">
-                <img src="${movie.images.src}" alt="Cover image of the movie" class="img">
+                <img src="${movie.images[0].src}" alt="Cover image of the movie" class="img">
                 <button class="cta shop-item-button" id="ctaproduct">BUY NOW</button>
+                
             </div>
         </section>`;
+        }
+
+    
 
         if (movie.on_sale === true){
 
@@ -56,7 +66,7 @@ async function createHtml() {
         }
     
         else {
-            document.getElementById('price').innerHTML += `<h2>$ ${movie.regular_price}</h2>`;
+            document.getElementById('price').innerHTML += `<h2>$ ${movie.prices.regular_price}</h2>`;
             document.getElementById('sale').innerHTML = ``;
         }
     }
