@@ -47,9 +47,9 @@ npm run start
 
 Any and all contributions are welcome! Here are some ways you can get started:
 
-1. Report bugs: If you encounter any bugs, please let us know.
-2. Open up an issue and let us know the problem.
-3. Contribute code: If you are a developer and want to contribute, follow the instructions below to get started!
+1. Report bugs: If you encounter any bugs, please let me know.
+2. Open up an issue and let me know the problem.
+3. Contribute code: If you are a developer and want to contribute, follow the instructions above to get started!
 4. Suggestions: If you don't want to code but have some awesome ideas, open up an issue explaining some updates or imporvements you would like to see!
 5. Documentation: If you see the need for some additional documentation, feel free to add some!
 
